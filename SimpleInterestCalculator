@@ -1,0 +1,35 @@
++package interest;
+import javax.swing.JOptionPane;
+import java.text.NumberFormat;
+
+/**
+ *
+ * @author user
+ */
+public class Interest {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String input = JOptionPane.showInputDialog (null, 
+                "How many dollars do you wish to borrow?");
+       double amount = Double.parseDouble (input);
+        input = JOptionPane.showInputDialog (null, 
+                "What is the interest rate?");
+       double rate = Double.parseDouble (input);
+        input = JOptionPane.showInputDialog (null,
+                "How many years will you take the loan? (whole number)");
+        Integer years = Integer.parseInt (input);
+       double interest = amount * (rate/100) * years;
+       NumberFormat dollars = NumberFormat.getCurrencyInstance();
+        JOptionPane.showMessageDialog (null, 
+"If you borrow " + dollars.format (amount) + " at an interest rate of " + rate +
+"\n for " + years + " years, you will pay " + dollars.format (interest) + " in interest.");
+        
+        
+                
+                
+    }
+    
+}
