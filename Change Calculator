@@ -1,0 +1,29 @@
+import java.util.Scanner;
+import java.lang.Math;
+
+
+
+class Main {
+
+    public static void main(String[] args) {
+    //Takes input from user
+    Scanner input = new Scanner(System.in);
+    System.out.println("Enter the price of the item from $0.25 cents to $1.00 in $0.05 cent increments. ");
+    //change calculations
+    double cost = input.nextDouble();
+    double change = 1.00 - cost;
+    double newChange = change % .25;
+    double quarters = change / .25;
+    double nextChange = newChange % .10;
+    double dimes = newChange / .10;
+    double nickles = nextChange / .05;
+    // .round() * 100 / 100 moves decimal 2 places
+    System.out.println("Your change is " + Math.round(quarters * 100) /100 + " quarters" +
+    "\n" + Math.round(dimes * 100) /100 + " dimes" +
+    "\n" + Math.round(nickles * 100)/100 + " nickles.");
+
+
+
+
+    }
+}
